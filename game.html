@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Result Generator</title>
+</head>
+
+<body>
+
+    <p id="demo"></p>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <p id="demo4"></p>
+    <p id="demo5"></p>
+    <p id="demo6"></p>
+    <p id="demo7"></p>
+
+    <script>
+
+        var mysteryLevel = Math.floor(Math.random() * 50) + 1;
+        var userScore = "45";
+        var score = Number(userScore);
+        var result = "20" * 5;
+
+        document.getElementById("demo").innerHTML =
+            "Mystery Level: " + mysteryLevel;
+
+        document.getElementById("demo1").innerHTML =
+            "User score as a string: " + userScore;
+
+        document.getElementById("demo2").innerHTML =
+            "User score converted to a number: " + score;
+
+        document.getElementById("demo3").innerHTML =
+            "Absolute difference: " + Math.abs(mysteryLevel - score);
+
+        document.getElementById("demo4").innerHTML =
+            "Square root of user score: " + Math.sqrt(score);
+
+        document.getElementById("demo5").innerHTML =
+            "Value of π (Pi): " + Math.PI;
+
+        document.getElementById("demo6").innerHTML =
+            'Implicit conversion: "20" × 5 = ' + result;
+
+        document.getElementById("demo7").innerHTML =
+            "Highest value: " + Math.max(10, 20, mysteryLevel) +
+            " | Lowest value: " + Math.min(10, 20, mysteryLevel);
+
+    </script>
+
+</body>
+</html>
