@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+</head>
+<body>
+    
+    <p id="demo"></p>
+    <p id="demo1"></p>
+
+    <button onclick="document.getElementById('demo2').innerHTML=admin;">Access</button>
+    <p id="demo2"></p>
+
+    <p id="demo3"></p>
+    <p id="demo4"></p>
+
+    <script>
+        let user={
+            userName:"Aardra Anand",
+            age:22,
+            isAdmin: true
+        };
+
+        document.getElementById("demo").innerHTML="User Name: "+user.userName;
+        document.getElementById("demo1").innerHTML="Age: "+user.age;
+        var admin = (user.age>=18) ? "Access Granted": "Access Denied";
+        
+        let ageExists = "age" in user;
+        document.getElementById("demo3").innerHTML ="Does age exist? " + ageExists;
+
+        delete user.age;
+
+        let ageAfterDelete = "age" in user;
+        document.getElementById("demo4").innerHTML ="Does age exist after deletion? " + ageAfterDelete;
+
+    </script>
+</body>
+</html>
