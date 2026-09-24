@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Result Dashboard</title>
+</head>
+<body>
+
+    <script>
+
+        var students = [
+            { name: "Sneha", score: 85 },
+            { name: "Rahul", score: 72 },
+            { name: "Anjali", score: 55 },
+            { name: "Anu", score: 92 }
+        ]
+
+        var names = students.map(getName);
+        console.log("All student names:", names);
+
+        function getName(student) {
+            return student.name;
+        }
+
+        var studentsAbove60 = students.filter(above60);
+        var namesAbove60 = studentsAbove60.map(getName);
+        console.log("Students scoring more than 60:", namesAbove60);
+
+        function above60(student) {
+            return student.score > 60;
+        }
+
+        var totalScore = students.reduce(getTotal, 0);
+        console.log("Total score:", totalScore);
+
+        function getTotal(total, student) {
+            return total + student.score;
+        }
+
+        var allPassed = students.every(checkPass);
+        console.log("All students passed:", allPassed);
+
+        function checkPass(student) {
+            return student.score > 35;
+        }
+
+         var atLeastOneAbove90 = students.some(checkAbove90);
+        console.log("At least one student scored more than 90:", atLeastOneAbove90);
+
+        function checkAbove90(student) {
+            return student.score > 90;
+        }
+
+        students.sort(sortByScore);
+        console.log("Students sorted by score:");
+
+        function sortByScore(a, b) {
+            return b.score - a.score;
+        }
+
+        students.forEach(displayStudent);
+        function displayStudent(student) {
+            console.log(student.name + " - " + student.score);
+        }
+
+    </script>
+
+</body>
+</html>
+
