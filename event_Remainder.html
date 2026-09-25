@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Reminder</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <script>
+
+        var inputDate = prompt("Enter a past date (YYYY-MM-DD):");
+
+        var date = new Date(inputDate);
+
+        var year = date.getFullYear();
+
+        var months = ["January", "February", "March", "April","May", "June", "July", "August","September", "October", "November", "December"];
+
+        var month = months[date.getMonth()];
+
+        var day = date.getDate();
+
+        var today = new Date();
+
+        var yearsPassed = today.getFullYear() - year;
+
+        var message;
+
+        if (yearsPassed > 1) {
+            message = "It has been more than a year since that date.";
+        } else {
+            message = "It has been less than a year since that date.";
+        }
+
+        document.getElementById("demo").innerHTML = "Date entered: "+ date + "<br>" + "Year: " + year + "<br>" + "Month: " + month + "<br>" + "Day: " + day + "<br>" +"Full years passed: " + yearsPassed + "<br>" + message;
+    </script>
+</body>
+</html>
