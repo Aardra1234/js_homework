@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Comment Filter</title>
+</head>
+<body>
+    <p id="first"></p>
+    <p id="demo"></p>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <p id="demo4"></p>
+    <script>
+
+    function myFunction() {
+
+    var comment = "I think this movie was BAD and 100% Stupid! But the Acting was Amazing and 3 actors were great";
+    document.getElementById("first").innerHTML = "<strong><i>Original Comment: </strong></i>" + comment;
+
+    var patt1 = /bad|ugly|stupid/ig;
+    var result = comment.match(patt1);
+    document.getElementById("demo").innerHTML = `<strong><i>Checking whether the comment contains any of the following banned words: "bad", "ugly", or "stupid" (case-insensitive):</strong></i> `+ result;
+    
+    var replacing = comment.replace(patt1,"***");
+    document.getElementById("demo1").innerHTML = `<strong><i>Replacing banned words with '***' : </strong></i>` + replacing;
+    
+    var numbers = comment.match(/\d+/g); 
+    var numberCount = numbers ? numbers.length : 0; 
+    document.getElementById("demo2").innerHTML = `<strong><i>Count of numbers mentioned in the comment:  </strong></i>` + numberCount;
+
+    var capitalWords = comment.match(/\b[A-Z][a-zA-Z]*\b/g); 
+    var capitalWordCount = capitalWords ? capitalWords.length : 0; 
+    document.getElementById("demo3").innerHTML = `<strong><i>Number of words beginning with a capital letter: </strong></i>` + capitalWordCount;
+
+    document.getElementById("demo4").innerHTML = `<strong><i>Final message: </strong></i><br>` + "<br><i>Cleaned comment: </i>" + replacing + "<br><i>Number count: </i>" + numberCount + "<br><i>Capitalized word count: </i>" + capitalWordCount; 
+    }
+
+    myFunction();
+    
+    </script>
+</body>
+</html>
