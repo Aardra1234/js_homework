@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Feedback</title>
+</head>
+<body>
+    <script>
+  
+        let jsonString = '{ "name":"Kevin", "feedback":"Thank you for your help!" }';
+        console.log("User feedback in JSON format: " + jsonString);
+
+        try {
+
+            var parsedData = JSON.parse(jsonString);
+
+            console.log("Converted the JSON string into a usable format:", parsedData);
+
+            var checkThankYou = (text) => /thank/i.test(text);
+
+            console.log(`Check if the feedback contains the word "thank"  :` + checkThankYou(message));
+
+            var message = parsedData.feedback;
+
+            if (checkThankYou(message)) {
+                console.log("Positive feedback received !!");
+            } else {
+                console.log("Feedback noted");
+            }
+
+        } catch (error) {
+            console.error("Invalid JSON format");
+        }
+    </script>
+</body>
+</html>
