@@ -31,9 +31,7 @@
         document.getElementById("demo3").innerHTML ="Does age exist? " + ageExists;
 
         delete user.age;
-
-        let ageAfterDelete = "age" in user;
-        document.getElementById("demo4").innerHTML ="Does age exist after deletion? " + ageAfterDelete;
+        document.getElementById("demo4").innerHTML = "After deleting age property from object user: "+ user.age;
 
     </script>
 </body>

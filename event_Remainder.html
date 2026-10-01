@@ -11,6 +11,8 @@
 
         var inputDate = prompt("Enter a past date (YYYY-MM-DD):");
 
+        var current= new Date();
+
         var date = new Date(inputDate);
 
         var year = date.getFullYear();
@@ -33,7 +35,7 @@
             message = "It has been less than a year since that date.";
         }
 
-        document.getElementById("demo").innerHTML = "Date entered: "+ date + "<br>" + "Year: " + year + "<br>" + "Month: " + month + "<br>" + "Day: " + day + "<br>" +"Full years passed: " + yearsPassed + "<br>" + message;
+        document.getElementById("demo").innerHTML = "  Current Date: " + current + "<br>" + "Date entered: "+ date + "<br>" + "Year: " + year + "<br>" + "Month: " + month + "<br>" + "Day: " + day + "<br>" +"Full years passed: " + yearsPassed + "<br>" + message;
     </script>
 </body>
 </html>

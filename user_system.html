@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Information</title>
+</head>
+<body>
+
+    <script>
+
+        class User {
+
+            constructor(name, age, email) {
+                this._name = name;
+                this._age = age;
+                this._email = email;
+            }
+
+            getName() {
+                return this._name;
+            }
+
+            getAge() {
+                return this._age;
+            }
+
+            setEmail(newEmail) {
+
+                if (newEmail.includes("@")) {
+                    this._email = newEmail;
+                    console.log(`Email successfully updated to: ${newEmail}`);
+                } else {
+                    console.log(`Failed to update email to "${newEmail}". Email must contain an @ symbol.`);
+                }
+
+            }
+        }
+
+        var user1 = new User("Anna", 22, "anna@gmail.com");
+
+        console.log("INITIAL USER DETAILS:");
+        console.log("Name:", user1.getName());
+        console.log("Age:", user1.getAge());
+        console.log("Email:", user1._email);
+
+        console.log("\n INVALID EMAIL UPDATE :");
+        user1.setEmail("anna.com");
+
+        console.log("\nVALID EMAIL UPDATE:");
+        user1.setEmail("anna123@gmail.com");
+
+        console.log("\nFINAL USER DETAILS :");
+        console.log("Name:", user1.getName());
+        console.log("Age:", user1.getAge());
+        console.log("Email:", user1._email);
+
+    </script>
+
+</body>
+</html>
