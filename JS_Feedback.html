@@ -19,9 +19,9 @@
 
             var checkThankYou = (text) => /thank/i.test(text);
 
-            console.log(`Check if the feedback contains the word "thank"  :` + checkThankYou(message));
-
             var message = parsedData.feedback;
+
+            console.log(`Check if the feedback contains the word "thank"  :` + checkThankYou(message));
 
             if (checkThankYou(message)) {
                 console.log("Positive feedback received !!");
