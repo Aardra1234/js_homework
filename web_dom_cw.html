@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Web Page</title>
+</head>
+<body>
+
+    <form id="form1" onsubmit="event.preventDefault(); updateText();">
+
+        Comments: <input type="text" id="comment" name="comment"><br><br>
+        <input type="submit" value="Submit">
+        <p id="demo" onmouseover="mOver(this)" onmouseout="mOut(this)" >The comments appear here.</p>
+
+    </form>
+
+    <script>
+        document.getElementById("demo").style.color = "blue";
+
+        function updateText() {
+            const inputText = document.getElementById("comment").value;
+            document.getElementById("demo").innerHTML = inputText;
+        }
+
+        function mOver(obj) {
+            document.getElementById("demo").style.color = "green";
+        }
+
+        function mOut(obj) {
+            document.getElementById("demo").style.color = "blue";
+        }
+    </script>
+
+</body>
+</html>
