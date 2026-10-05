@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form</title>
+</head>
+<body>
+
+    <form id="form1" onsubmit="event.preventDefault(); submitFeedback();">
+
+        Name:
+        <input type="text" id="name" name="name">
+        <br><br>
+
+        Feedback: 
+        <textarea id="feedback" name="feedback"></textarea>
+        <br><br>
+
+        <input type="submit" value="Submit">
+
+    </form>
+
+    <p id="nameDisplay"></p>
+
+    <p id="feedbackDisplay"
+       onmouseover="mOver(this)"
+       onmouseout="mOut(this)"></p>
+
+    <p id="message"></p>
+
+    <script>
+
+        function submitFeedback() {
+
+            var name = document.getElementById("name").value;
+            var feedback = document.getElementById("feedback").value;
+
+            document.getElementById("nameDisplay").innerHTML =
+                "Name: " + name;
+
+            document.getElementById("feedbackDisplay").innerHTML =
+                "Feedback: " + feedback;
+
+            document.getElementById("message").innerHTML =
+                "Thanks for your feedback!";
+
+            document.getElementById("message").style.color = "green";
+
+            setTimeout(function() {
+                document.getElementById("message").innerHTML = "";
+            }, 5000);
+        }
+
+        function mOver(obj) {
+
+            document.getElementById("feedbackDisplay").style.color = "blue";
+
+        }
+
+        function mOut(obj) {
+
+            document.getElementById("feedbackDisplay").style.color = "black";
+
+        }
+
+    </script>
+
+</body>
+</html>
